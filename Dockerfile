@@ -18,8 +18,8 @@ RUN echo "from django.http import HttpResponse\ndef home(request): return HttpRe
 RUN sed -i "s/from django.urls import path/from django.urls import path\nfrom . import views/" helloworld/urls.py \
     && sed -i "s/urlpatterns = \[/urlpatterns = [path('', views.home),/" helloworld/urls.py
 
-# Make port 8000 available to the world outside this container
-EXPOSE 8000
+# Make port 8080 available to the world outside this container
+EXPOSE 8080
 
 # Run migrations and then start the server
 CMD ["sh", "-c", "python manage.py migrate && exec python manage.py runserver 0.0.0.0:8000"]
