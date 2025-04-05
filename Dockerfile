@@ -22,4 +22,4 @@ RUN sed -i "s/from django.urls import path/from django.urls import path\nfrom . 
 EXPOSE 8080
 
 # Run migrations and then start the server
-CMD ["sh", "-c", "python manage.py migrate && exec python manage.py runserver 0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py migrate && exec python manage.py runserver 0.0.0.0:8080"]
